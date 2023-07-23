@@ -207,7 +207,7 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="./ckpt",
+        default="./ckpt/v2-1_512-ema-pruned.ckpt",
         help="path to checkpoint of model",
     )
     
@@ -509,7 +509,7 @@ def main():
                 del param, segmentation_map, top_rr, bottom_rr, left_rr, right_rr, target_height, target_width, center_row_rm, center_col_rm
                 del init_image, init_latent, save_image, ref_image, ref_latent, prompt, prompts, data, binary, contours
 
-    print(f"Your samples are ready and waiting for you here: \n{outpath} \nEnjoy.")
+    print(f"Your samples are ready and waiting for you here: \n{sample_path} \nEnjoy.")
 
 
 if __name__ == "__main__":

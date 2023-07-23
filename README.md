@@ -66,15 +66,15 @@ Several input samples are avaliable under `./inputs` directory. Each sample invo
 To execute the TF-ICON, run the following commands:
 
 ```
-python main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
-                        --root ./inputs/cross_domain      \
-                        --cross_domain True               \
-                        --dpm_steps 20                    \
-                        --dpm_order 2                     \
-                        --scale 5                         \
-                        --outdir ./outputs                \
-                        --gpu cuda:0                      \
-                        --seed 3407                         
+python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
+                                --root ./inputs/cross_domain      \
+                                --cross_domain True               \
+                                --dpm_steps 20                    \
+                                --dpm_order 2                     \
+                                --scale 5                         \
+                                --outdir ./outputs                \
+                                --gpu cuda:0                      \
+                                --seed 3407                         
 ```
 - `ckpt`: The path to the checkpoint of Stable Diffusion.
 - `root`: The path to your input data.
@@ -102,9 +102,9 @@ If you find the code useful for your research, please consider citing
     pages     = {1921-1930}
 }
 ``` -->
-### Additional Results
+## Additional Results
 ![sketchy-comp](assets/Additional_composition_ske.png)
-![tf-icon](assets/Additional_composition_oil.png)
+![painting-comp](assets/Additional_composition_oil.png)
 ![real-comp](assets/Additional_composition_real1.png)
-
+![carton-comp](assets/Additional_composition_carton.png)
 
