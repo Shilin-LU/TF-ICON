@@ -112,6 +112,7 @@ If you find the code useful for your research, please consider citing
     pages     = {1921-1930}
 }
 ``` -->
+
 ## Additional Results
 ### Sketchy Painting
 ![sketchy-comp](assets/Additional_composition_ske.png)
@@ -137,7 +138,7 @@ If you find the code useful for your research, please consider citing
 ### Cartoon
 ![carton-comp](assets/Additional_composition_carton.png)
 
----
+<!-- ---
 
-</div>
+</div> -->
 
