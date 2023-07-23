@@ -4,7 +4,7 @@ This repo contains the official implementation for the paper Diffusion-Based Tra
 
 > **TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition**<br>
 <!-- > [Gwanghyun Kim](https://gwang-kim.github.io/), Taesung Kwon, [Jong Chul Ye](https://bispl.weebly.com/professor.html) <br> -->
-> Shilin Lu, Yanzhu Liu, and Adams Wai-Kin Kong
+> Shilin Lu, Yanzhu Liu, and Adams Wai-Kin Kong <br>
 > CVPR 2022
 > 
 >**Abstract**: <br>
@@ -86,11 +86,12 @@ python main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
 
 ## TF-ICON Test Benchmark
 
-To-DO.
+TO-DO.
 <!-- You can find the **Wild-TI2I**, **ImageNetR-TI2I** and **ImageNetR-Fake-TI2I** benchmarks in [this dropbox folder](https://www.dropbox.com/sh/8giw0uhfekft47h/AAAF1frwakVsQocKczZZSX6La?dl=0). The translation prompts and all the necessary configs (e.g. seed, generation prompt, guidance image path) are provided in a yaml file in each benchmark folder. -->
 
 <!-- 
 ## Citation
+If you find the code useful for your research, please consider citing
 ```
 @InProceedings{Tumanyan_2023_CVPR,
     author    = {Tumanyan, Narek and Geyer, Michal and Bagon, Shai and Dekel, Tali},
@@ -101,4 +102,9 @@ To-DO.
     pages     = {1921-1930}
 }
 ``` -->
+### Additional Results
+![sketchy-comp](assets/Additional_composition_ske.png)
+![tf-icon](assets/Additional_composition_oil.png)
+![real-comp](assets/Additional_composition_real1.png)
+
 
