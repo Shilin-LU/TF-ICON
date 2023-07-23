@@ -122,10 +122,7 @@ def main():
         "--prompt",
         type=str,
         nargs="?",
-        # default="a professional oil painting of a puppy, Van Gogh style",
-        # default="a professional sketch painting of a car, pen and ink sketch, gray tone",
-        default="a professional photograph of a cabinet, ultra realistic",
-        # default = "a photo of a car",
+        default="a professional photograph of a doggy, ultra realistic",
         help="the prompt to render"
     )
 
@@ -133,24 +130,21 @@ def main():
         "--init-img",
         type=str,
         nargs="?",
-        help="path to the input image",
-        # default="/home/shilin/proj/sd2/img/foregrounds/chair/510028.jpg" # "/home/shilin/proj/sd2/img/sketch.jpg"
+        help="path to the input image"
     )
 
     parser.add_argument(
         "--ref-img",
         type=list,
         nargs="?",
-        help="path to the input image",
-        # default=["/home/shilin/proj/sd2/img/foregrounds/chair/cropped_image.jpg",] # "/home/shilin/proj/sd2/img/Eiffel_tower.jpg" sketch_0.JPEG
+        help="path to the input image"
     )
     
     parser.add_argument(
         "--seg",
         type=str,
         nargs="?",
-        help="path to the input image",
-        # default="/home/shilin/proj/sd2/img/foregrounds/chair/mask.png" 
+        help="path to the input image"
     )
         
     parser.add_argument(
@@ -162,7 +156,7 @@ def main():
     )
 
     parser.add_argument(
-        "--ddim_steps",
+        "--dpm_steps",
         type=int,
         default=20,
         help="number of ddim sampling steps",
@@ -213,7 +207,7 @@ def main():
     parser.add_argument(
         "--ckpt",
         type=str,
-        default="/home/shilin/proj/sd2/ckpt/v2-1_512-ema-pruned.ckpt",
+        default="./ckpt",
         help="path to checkpoint of model",
     )
     
@@ -418,7 +412,7 @@ def main():
                             ref_latent = model.get_first_stage_encoding(model.encode_first_stage(ref_image))
                         
                             shape = [init_latent.shape[1], init_latent.shape[2], init_latent.shape[3]]
-                            z_enc, _ = sampler.sample(steps=opt.ddim_steps,
+                            z_enc, _ = sampler.sample(steps=opt.dpm_steps,
                                                     inv_emb=inv_emb,
                                                     unconditional_conditioning=uc,
                                                     conditioning=c,
@@ -434,7 +428,7 @@ def main():
                                                     DPMencode=True,
                                                     )
                             
-                            z_ref_enc, _ = sampler.sample(steps=opt.ddim_steps,
+                            z_ref_enc, _ = sampler.sample(steps=opt.dpm_steps,
                                                         inv_emb=inv_emb,
                                                         unconditional_conditioning=uc,
                                                         conditioning=c,
@@ -477,7 +471,7 @@ def main():
                             mask = torch.zeros_like(z_enc, device=device)
                             mask[:, :, param[0]:param[1], param[2]:param[3]] = 1
                                                 
-                            samples, _ = sampler.sample(steps=opt.ddim_steps,
+                            samples, _ = sampler.sample(steps=opt.dpm_steps,
                                                         inv_emb=inv_emb,
                                                         conditioning=c,
                                                         batch_size=opt.n_samples,
