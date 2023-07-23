@@ -113,24 +113,28 @@ If you find the code useful for your research, please consider citing
 }
 ``` -->
 ## Additional Results
+### Sketchy Painting
 ![sketchy-comp](assets/Additional_composition_ske.png)
 
 ---
 
 </div>
 
+### Oil Painting
 ![painting-comp](assets/Additional_composition_oil.png)
 
 ---
 
 </div>
 
+### Photorealism
 ![real-comp](assets/Additional_composition_real1.png)
 
 ---
 
 </div>
 
+### Cartoon
 ![carton-comp](assets/Additional_composition_carton.png)
 
 ---
