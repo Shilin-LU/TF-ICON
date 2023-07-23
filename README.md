@@ -1,11 +1,11 @@
 # TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition (ICCV 2023)
 
-This repo contains the official implementation for the paper Diffusion-Based Training-Free Cross-Domain Image Composition (ICCV 2023)
+This repo contains the official implementation for Diffusion-Based Training-Free Cross-Domain Image Composition.
 
 > **TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition**<br>
 <!-- > [Gwanghyun Kim](https://gwang-kim.github.io/), Taesung Kwon, [Jong Chul Ye](https://bispl.weebly.com/professor.html) <br> -->
 > Shilin Lu, Yanzhu Liu, and Adams Wai-Kin Kong <br>
-> CVPR 2022
+> ICCV 2023
 > 
 >**Abstract**: <br>
 Text-driven diffusion models have exhibited impressive generative capabilities, enabling various image editing tasks. In this paper, we propose TF-ICON, a novel Training-Free Image COmpositioN framework that harnesses the power of text-driven diffusion models for cross-domain image-guided composition. This task aims to seamlessly integrate user-provided objects into a specific visual context. Current diffusion-based methods often involve costly instance-based optimization or finetuning of pretrained models on customized datasets, which can potentially undermine their rich prior. In contrast, TF-ICON can leverage off-the-shelf diffusion models to perform cross-domain image-guided composition without requiring additional training, finetuning, or optimization. Moreover, we introduce the exceptional prompt, which contains no information, to facilitate text-driven diffusion models in accurately inverting real images into latent representations, forming the basis for compositing. Our experiments show that equipping Stable Diffusion with the exceptional prompt outperforms state-of-the-art inversion methods on various datasets (CelebA-HQ, COCO, and ImageNet), and that TF-ICON surpasses prior baselines in versatile visual domains.
