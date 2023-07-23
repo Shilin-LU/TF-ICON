@@ -14,7 +14,8 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-PnP-b31b1b.svg)](https://arxiv.org/abs/2211.12572) [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/hysts/PnP-diffusion-features) <a href="https://replicate.com/arielreplicate/plug_and_play_image_translation"><img src="https://replicate.com/arielreplicate/plug_and_play_image_translation/badge"></a> [![TI2I](https://img.shields.io/badge/benchmarks-TI2I-blue)](https://www.dropbox.com/sh/8giw0uhfekft47h/AAAF1frwakVsQocKczZZSX6La?dl=0) -->
 
-![tf-icon](assets/tf-icon.png)
+![teaser](assets/tf-icon.png)
+![framework](assets/framework_vector.png)
 
 <!-- # Updates:
 
@@ -44,6 +45,8 @@ and has shared dependencies and model architecture. VRAM of 24 GB+ are required.
 ### Creating a Conda Environment
 
 ```
+git clone https://github.com/Shilin-LU/TF-ICON.git
+cd TF-ICON
 conda env create -f tf_icon_env.yaml
 conda activate tf-icon
 ```
