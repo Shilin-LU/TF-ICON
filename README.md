@@ -114,7 +114,22 @@ If you find the code useful for your research, please consider citing
 ``` -->
 ## Additional Results
 ![sketchy-comp](assets/Additional_composition_ske.png)
+---
+
+</div>
+
 ![painting-comp](assets/Additional_composition_oil.png)
+---
+
+</div>
+
 ![real-comp](assets/Additional_composition_real1.png)
+---
+
+</div>
+
 ![carton-comp](assets/Additional_composition_carton.png)
+---
+
+</div>
 
