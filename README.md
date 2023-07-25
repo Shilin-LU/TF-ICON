@@ -43,6 +43,9 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
 3. [Running PnP](#running-pnp)
 4. [TI2I Benchmarks](#ti2i-benchmarks) -->
 
+---
+
+</div>
 
 **Contents**
   - [Setup](#setup)
