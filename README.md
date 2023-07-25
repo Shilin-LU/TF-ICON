@@ -73,22 +73,22 @@ inputs
 ├── cross_domain
 │  ├── prompt1
 │  │  ├── bgxx.png
-│  │  ├── fgxx.jpg
+│  │  ├── fgxx.png
 │  │  ├── fgxx_mask.png
-│  │  ├── mask_bg_fg.jpg
+│  │  ├── mask_bg_fg.png
 │  ├── prompt2
 │  ├── ...
 ├── same_domain
 │  ├── prompt1
 │  │  ├── bgxx.png
-│  │  ├── fgxx.jpg
+│  │  ├── fgxx.png
 │  │  ├── fgxx_mask.png
-│  │  ├── mask_bg_fg.jpg
+│  │  ├── mask_bg_fg.png
 │  ├── prompt2
 │  ├── ...
 ```
 
-More samples are available in [TF-ICON Test Benchmark](#tf-icon test benchmark) or you can customize them. Note that the resolution of the input foreground should not be too small. 
+More samples are available in [TF-ICON Test Benchmark](#tf\-icon-test-benchmark) or you can customize them. Note that the resolution of the input foreground should not be too small. 
 
 - Cross domain: the background (bg) and foreground (fg) images originate from different visual domains.
 - Same domain: both the background (bg) and foreground (fg) images belong to the photorealism domain.
