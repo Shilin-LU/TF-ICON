@@ -84,7 +84,7 @@ Download the StableDiffusion weights from the [Stability AI at Hugging Face](htt
 
 ### Data Preparation
 
-Several input samples are available under `./inputs` directory. Each sample involves one background (bg), one foreground (fg), one segmentation mask for the foreground (fg), and one user mask that denotes the desired composition location. The input data structure is like this:
+Several input samples are available under `./inputs` directory. Each sample involves one background (bg), one foreground (fg), one segmentation mask for the foreground (fg_mask), and one user mask that denotes the desired composition location (mask_bg_fg). The input data structure is like this:
 ```
 inputs
 ├── cross_domain
