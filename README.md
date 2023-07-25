@@ -110,8 +110,8 @@ inputs
 
 More samples are available in [TF-ICON Test Benchmark](#tf\-icon-test-benchmark) or you can customize them. Note that the resolution of the input foreground should not be too small. 
 
-- Cross domain: the background (bg) and foreground (fg) images originate from different visual domains.
-- Same domain: both the background (bg) and foreground (fg) images belong to the photorealism domain.
+- Cross domain: the background and foreground images originate from different visual domains.
+- Same domain: both the background and foreground images belong to the same photorealism domain.
 
 ### Image Composition
 To execute the TF-ICON, run the following commands:
