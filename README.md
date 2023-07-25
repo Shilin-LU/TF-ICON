@@ -61,9 +61,8 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
     - [Photorealism](#photorealism)
     - [Cartoon](#cartoon)
 
----
 
-</div>
+<br>
 
 ## Setup
 
