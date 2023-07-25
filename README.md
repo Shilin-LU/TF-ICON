@@ -60,6 +60,7 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
     - [Oil Painting](#oil-painting)
     - [Photorealism](#photorealism)
     - [Cartoon](#cartoon)
+  - [Citation](#citation)
 
 
 <br>
@@ -142,19 +143,7 @@ The complete TF-ICON test benchmark is available in [this OneDrive folder](https
 
 <!-- You can find the **Wild-TI2I**, **ImageNetR-TI2I** and **ImageNetR-Fake-TI2I** benchmarks in [this dropbox folder](https://www.dropbox.com/sh/8giw0uhfekft47h/AAAF1frwakVsQocKczZZSX6La?dl=0). The translation prompts and all the necessary configs (e.g. seed, generation prompt, guidance image path) are provided in a yaml file in each benchmark folder. -->
 
-<!-- 
-## Citation
-If you find the code useful for your research, please consider citing
-```
-@InProceedings{Tumanyan_2023_CVPR,
-    author    = {Tumanyan, Narek and Geyer, Michal and Bagon, Shai and Dekel, Tali},
-    title     = {Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2023},
-    pages     = {1921-1930}
-}
-``` -->
+
 
 ## Additional Results
 ### Sketchy Painting
@@ -181,7 +170,17 @@ If you find the code useful for your research, please consider citing
 ### Cartoon
 ![carton-comp](assets/Additional_composition_carton.png)
 
-<!-- ---
+---
 
-</div> -->
+</div>
 
+## Citation
+If you find the repo useful, please consider citing:
+```
+@InProceedings{lu2023tficon,
+    author    = {Lu, Shilin and Liu, Yanzhu and Kong, Adams Wai-Kin},
+    title     = {TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2023},
+}
+```
