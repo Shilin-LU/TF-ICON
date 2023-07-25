@@ -47,7 +47,7 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
 
 </div>
 
-**Contents**
+## Contents
   - [Setup](#setup)
     - [Creating a Conda Environment](#creating-a-conda-environment)
     - [Downloading Stable-Diffusion Weights](#downloading-stable\-diffusion-weights)
@@ -60,6 +60,10 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
     - [Oil Painting](#oil-painting)
     - [Photorealism](#photorealism)
     - [Cartoon](#cartoon)
+
+---
+
+</div>
 
 ## Setup
 
