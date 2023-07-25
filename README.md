@@ -2,6 +2,8 @@
 
 Official implementation of Diffusion-Based Training-Free Cross-Domain Image Composition.
 
+[![arXiv](https://img.shields.io/badge/arXiv-TF--ICON-green.svg?style=plastic)](https://arxiv.org/abs/2307.12493) [![TI2I](https://img.shields.io/badge/benchmarks-TF--ICON-blue.svg?style=plastic)](https://entuedu-my.sharepoint.com/:f:/g/personal/shilin002_e_ntu_edu_sg/EmmCgLm_3OZCssqjaGdvjMwBCIvqfjsyphjqNs7g2DFzQQ?e=JSwOHY)
+
 > **TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition**<br>
 <!-- > [Gwanghyun Kim](https://gwang-kim.github.io/), Taesung Kwon, [Jong Chul Ye](https://bispl.weebly.com/professor.html) <br> -->
 > Shilin Lu, Yanzhu Liu, and Adams Wai-Kin Kong <br>
@@ -65,7 +67,28 @@ Download the StableDiffusion weights from the [Stability AI at Hugging Face](htt
 
 ### Data Preparation
 
-Several input samples are available under `./inputs` directory. Each sample involves one background (bg), one foreground (fg), one segmentation mask for the foreground (fg), and one user mask that denotes the desired composition location. Note that the resolution of the input foreground should not be too small. 
+Several input samples are available under `./inputs` directory. Each sample involves one background (bg), one foreground (fg), one segmentation mask for the foreground (fg), and one user mask that denotes the desired composition location. The input data structure is like this:
+```
+inputs
+├── cross_domain
+│  ├── prompt1
+│  │  ├── bgxx.png
+│  │  ├── fgxx.jpg
+│  │  ├── fgxx_mask.png
+│  │  ├── mask_bg_fg.jpg
+│  ├── prompt2
+│  ├── ...
+├── same_domain
+│  ├── prompt1
+│  │  ├── bgxx.png
+│  │  ├── fgxx.jpg
+│  │  ├── fgxx_mask.png
+│  │  ├── mask_bg_fg.jpg
+│  ├── prompt2
+│  ├── ...
+```
+
+More samples are available in [TF-ICON Test Benchmark](#tf-icon test benchmark) or you can customize them. Note that the resolution of the input foreground should not be too small. 
 
 - Cross domain: the background (bg) and foreground (fg) images originate from different visual domains.
 - Same domain: both the background (bg) and foreground (fg) images belong to the photorealism domain.
@@ -94,7 +117,7 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
 
 ## TF-ICON Test Benchmark
 
-The complete TF-ICON test benchmark is available in [this OneDrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shilin002_e_ntu_edu_sg/EmmCgLm_3OZCssqjaGdvjMwBoD61o_MYFXPoH_pwqiG17Q?e=DWptYP). To access it, please use the password: 123
+The complete TF-ICON test benchmark is available in [this OneDrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shilin002_e_ntu_edu_sg/EmmCgLm_3OZCssqjaGdvjMwBCIvqfjsyphjqNs7g2DFzQQ?e=JSwOHY). If you find the benchmark useful for your research, please consider citing.
 
 
 <!-- You can find the **Wild-TI2I**, **ImageNetR-TI2I** and **ImageNetR-Fake-TI2I** benchmarks in [this dropbox folder](https://www.dropbox.com/sh/8giw0uhfekft47h/AAAF1frwakVsQocKczZZSX6La?dl=0). The translation prompts and all the necessary configs (e.g. seed, generation prompt, guidance image path) are provided in a yaml file in each benchmark folder. -->
