@@ -60,6 +60,7 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
     - [Oil Painting](#oil-painting)
     - [Photorealism](#photorealism)
     - [Cartoon](#cartoon)
+  - [Acknowledgments](#acknowledgments)
   - [Citation](#citation)
 
 
@@ -173,6 +174,10 @@ The complete TF-ICON test benchmark is available in [this OneDrive folder](https
 ---
 
 </div>
+
+## Acknowledgments
+Our work is standing on the shoulders of giants. We thank the following contributors that our code is based on: [Stable-Diffusion](https://github.com/Stability-AI/stablediffusion) and [Prompt-to-Prompt](https://github.com/google/prompt-to-prompt).
+
 
 ## Citation
 If you find the repo useful, please consider citing:
