@@ -1,8 +1,8 @@
 # TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition (ICCV 2023)
 
-Official implementation of Diffusion-Based Training-Free Cross-Domain Image Composition.
-
 [![arXiv](https://img.shields.io/badge/arXiv-TF--ICON-green.svg?style=plastic)](https://arxiv.org/abs/2307.12493) [![TI2I](https://img.shields.io/badge/benchmarks-TF--ICON-blue.svg?style=plastic)](https://entuedu-my.sharepoint.com/:f:/g/personal/shilin002_e_ntu_edu_sg/EmmCgLm_3OZCssqjaGdvjMwBCIvqfjsyphjqNs7g2DFzQQ?e=JSwOHY)
+
+Official implementation of [TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition](https://arxiv.org/abs/2307.12493).
 
 > **TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition**<br>
 <!-- > [Gwanghyun Kim](https://gwang-kim.github.io/), Taesung Kwon, [Jong Chul Ye](https://bispl.weebly.com/professor.html) <br> -->
@@ -43,6 +43,20 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
 3. [Running PnP](#running-pnp)
 4. [TI2I Benchmarks](#ti2i-benchmarks) -->
 
+
+**Contents**
+  - [Setup](#setup)
+    - [Creating a Conda Environment](#creating-a-conda-environment)
+    - [Downloading Stable-Diffusion Weights](#downloading-stable\-diffusion-weights)
+  - [Running TF-ICON](#running-tf\-icon)
+    - [Data Preparation](#data-preparation) 
+    - [Image Composition](#image-composition)
+  - [TF-ICON Test Benchmark](#tf\-icon-test-benchmark)
+  - [Additional Results](#additional-results)
+    - [Sketchy Painting](#sketchy-painting)
+    - [Oil Painting](#oil-painting)
+    - [Photorealism](#photorealism)
+    - [Cartoon](#cartoon)
 
 ## Setup
 
