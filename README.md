@@ -1,5 +1,7 @@
 # TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition (ICCV 2023)
 
+## [<a href="https://shilin-lu.github.io/tf-icon.github.io/" target="_blank">Project Page</a>]
+
 [![arXiv](https://img.shields.io/badge/arXiv-TF--ICON-green.svg?style=plastic)](https://arxiv.org/abs/2307.12493) [![TI2I](https://img.shields.io/badge/benchmarks-TF--ICON-blue.svg?style=plastic)](https://entuedu-my.sharepoint.com/:f:/g/personal/shilin002_e_ntu_edu_sg/EmmCgLm_3OZCssqjaGdvjMwBCIvqfjsyphjqNs7g2DFzQQ?e=JSwOHY)
 
 Official implementation of [TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition](https://arxiv.org/abs/2307.12493).
@@ -176,7 +178,7 @@ The complete TF-ICON test benchmark is available in [this OneDrive folder](https
 </div>
 
 ## Acknowledgments
-Our work is standing on the shoulders of giants. We thank the following contributors that our code is based on: [Stable-Diffusion](https://github.com/Stability-AI/stablediffusion) and [Prompt-to-Prompt](https://github.com/google/prompt-to-prompt).
+Our work is standing on the shoulders of giants. We thank the following contributors that our code is based on: [Stable-Diffusion](https://github.com/Stability-AI/stablediffusion) and [Prompt-to-Prompt](https://github.com/google/prompt-to-prompt). 
 
 
 ## Citation
