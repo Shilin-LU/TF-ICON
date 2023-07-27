@@ -65,6 +65,8 @@ class DPMSolverSampler(object):
                target_width=None,
                center_row_rm=None,
                center_col_rm=None,
+               tau_a=0.4,
+               tau_b=0.8,
                # this has to come in the same format as the conditioning, # e.g. as encoded tokens, ...
                **kwargs
                ):
@@ -187,7 +189,7 @@ class DPMSolverSampler(object):
                 cross['x'] = orig['x']
                 cross = dpm_solver_decode.sample_one_step(cross, step, steps, order=order, DPMencode=DPMencode, ref_init=ref['x'].clone())
                                 
-                if step < int(0.4*(steps) + 1 - order):
+                if step < int(tau_a*(steps) + 1 - order):
                     inject = True
                     # decoded reference
                     ptp_utils.register_attention_control(self.model, ref_controller, center_row_rm, center_col_rm, target_height, target_width, 
@@ -208,7 +210,7 @@ class DPMSolverSampler(object):
                                                      top, left, bottom, right, segmentation_map=segmentation_map[0, 0].clone(), inject_bg=inject_bg)
                 gen = dpm_solver_gen.sample_one_step(gen, step, steps, order=order, DPMencode=DPMencode, controller=controller, inject=inject)
 
-                if step < int(0.8*(steps) + 1 - order): 
+                if step < int(tau_b*(steps) + 1 - order): 
                     blended = orig['x'].clone() 
                     blended[:, :, param[0] : param[1], param[2] : param[3]] \
                         = gen['x'][:, :, param[0] : param[1], param[2] : param[3]].clone()

@@ -127,6 +127,8 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
                                 --dpm_steps 20                    \
                                 --dpm_order 2                     \
                                 --scale 5                         \
+                                --tau_a 0.4                       \
+                                --tau_b 0.8                       \
                                 --outdir ./outputs                \
                                 --gpu cuda:0                      \
                                 --seed 3407                         
@@ -137,7 +139,8 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
 - `dpm_steps`: The diffusion sampling steps.
 - `dpm_solver`: The order of the probability flow ODE solver.
 - `scale`: The classifier-free guidance (CFG) scale.
-
+- `tau_a`: The threshold for injecting composite self-attention maps.
+- `tau_b`: The threshold for preserving background.
 
 ## TF-ICON Test Benchmark
 

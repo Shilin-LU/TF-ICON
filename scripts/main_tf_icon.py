@@ -249,6 +249,20 @@ def main():
     ) 
     
     parser.add_argument(
+        "--tau_a",
+        type=float,
+        help="",
+        default=0.4
+    )
+      
+    parser.add_argument(
+        "--tau_b",
+        type=float,
+        help="",
+        default=0.8
+    )
+          
+    parser.add_argument(
         "--gpu",
         type=str,
         help="",
@@ -367,8 +381,8 @@ def main():
                 save_mask = torch.zeros_like(init_image) 
                 save_mask[:, :, center_row_rm - step_height1:center_row_rm + step_height2, center_col_rm - step_width1:center_col_rm + step_width2] = 1
 
-                image = Image.fromarray(((save_mask) * 255)[0].permute(1,2,0).to(dtype=torch.uint8).cpu().numpy())
-                image.save('./outputs/mask_bg_fg.jpg')
+                # image = Image.fromarray(((save_mask) * 255)[0].permute(1,2,0).to(dtype=torch.uint8).cpu().numpy())
+                # image.save('./outputs/mask_bg_fg.jpg')
                 image = Image.fromarray(((save_image/torch.max(save_image.max(), abs(save_image.min())) + 1) * 127.5)[0].permute(1,2,0).to(dtype=torch.uint8).cpu().numpy())
                 image.save('./outputs/cp_bg_fg.jpg')
 
@@ -491,6 +505,8 @@ def main():
                                                         target_width=target_width,
                                                         center_row_rm=center_row_from_top,
                                                         center_col_rm=center_col_from_left,
+                                                        tau_a=opt.tau_a,
+                                                        tau_b=opt.tau_b,
                                                         )
                                 
                             x_samples = model.decode_first_stage(samples)
