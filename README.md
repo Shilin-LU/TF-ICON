@@ -151,7 +151,7 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
 
 - `ckpt`: The path to the checkpoint of Stable Diffusion.
 - `root`: The path to your input data.
-- `cross_domain`: Setting if the foreground and background are from different visual domains. 
+- `domain`: Setting 'cross' if the foreground and background are from different visual domains, otherwise 'same'. 
 - `dpm_steps`: The diffusion sampling steps.
 - `dpm_solver`: The order of the probability flow ODE solver.
 - `scale`: The classifier-free guidance (CFG) scale.
