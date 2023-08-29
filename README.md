@@ -118,12 +118,12 @@ More samples are available in [TF-ICON Test Benchmark](#tf\-icon-test-benchmark)
 - Same domain: both the background and foreground images belong to the same photorealism domain.
 
 ### Image Composition
-To execute the TF-ICON, run the following commands:
+To execute the TF-ICON under the 'cross_domain' mode, run the following commands:
 
 ```
 python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
                                 --root ./inputs/cross_domain      \
-                                --cross_domain True               \
+                                --domain 'cross'                  \
                                 --dpm_steps 20                    \
                                 --dpm_order 2                     \
                                 --scale 5                         \
@@ -133,6 +133,22 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
                                 --gpu cuda:0                      \
                                 --seed 3407                         
 ```
+
+For the 'same_domain' mode, run the following commands:
+```
+python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
+                                --root ./inputs/same_domain       \
+                                --domain 'same'                   \
+                                --dpm_steps 20                    \
+                                --dpm_order 2                     \
+                                --scale 2.5                       \
+                                --tau_a 0.4                       \
+                                --tau_b 0.8                       \
+                                --outdir ./outputs                \
+                                --gpu cuda:0                      \
+                                --seed 3407                         
+```
+
 - `ckpt`: The path to the checkpoint of Stable Diffusion.
 - `root`: The path to your input data.
 - `cross_domain`: Setting if the foreground and background are from different visual domains. 

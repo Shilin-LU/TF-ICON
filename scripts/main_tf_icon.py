@@ -234,10 +234,10 @@ def main():
     ) 
     
     parser.add_argument(
-        "--cross_domain",
-        type=bool,
+        "--domain",
+        type=str,
         help="",
-        default=False
+        default='cross'
     ) 
     
     parser.add_argument(
@@ -276,12 +276,14 @@ def main():
     outpath = opt.outdir
 
     # The scale used in the paper
-    if opt.cross_domain:
+    if opt.domain == 'cross':
         opt.scale = 5.0
         file_name = "cross_domain"
-    else:
+    elif opt.domain == 'same':
         opt.scale = 2.5
         file_name = "same_domain"
+    else:
+        raise ValueError("Invalid domain")
         
     batch_size = opt.n_samples
     sample_path = os.path.join(outpath, file_name)
@@ -395,7 +397,7 @@ def main():
                             print(prompts)
                             c, uc, inv_emb = load_model_and_get_prompt_embedding(model, opt, device, prompts, inv=True)
                             
-                            if not opt.cross_domain: # same domain
+                            if opt.domain == 'same': # same domain
                                 init_image = save_image
                             
                             T1 = time.time()
@@ -473,7 +475,7 @@ def main():
                             samples = z_enc.clone()
 
                             # noise composition
-                            if opt.cross_domain: 
+                            if opt.domain == 'cross': 
                                 samples[:, :, param[0]:param[1], param[2]:param[3]] = torch.randn((1, 4, bottom_rr - top_rr, right_rr - left_rr), device=device) 
                                 # apply the segmentation mask on the noise
                                 samples[:, :, param[0]:param[1], param[2]:param[3]] \
