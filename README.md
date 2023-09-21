@@ -71,7 +71,7 @@ Text-driven diffusion models have exhibited impressive generative capabilities, 
 ## Setup
 
 Our codebase is built on [Stable-Diffusion](https://github.com/Stability-AI/stablediffusion)
-and has shared dependencies and model architecture. VRAM of 24 GB+ are required. 
+and has shared dependencies and model architecture. A VRAM of 23 GB is recommended, though this may vary depending on the input samples (minimum 20 GB).
 
 ### Creating a Conda Environment
 

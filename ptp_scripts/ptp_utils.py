@@ -189,7 +189,7 @@ def text2image_ldm_stable(
 def register_attention_control(model, controller, center_row_rm, center_col_rm, target_height, target_width, width, height, top=None, left=None, bottom=None, right=None, inject_bg=False, segmentation_map=None, pseudo_cross=False): 
     def ca_forward(self, place_in_unet):
         def forward(x, context=None, mask=None, encode=False, controller_for_inject=None, inject=False, layernum=None, main_height=None, main_width=None):
-
+            torch.cuda.empty_cache()
             is_cross = context is not None
             h = self.heads
 

@@ -230,7 +230,7 @@ def main():
         "--root",
         type=str,
         help="",
-        default='./inputs/same_domain'
+        default='./inputs/cross_domain'
     ) 
     
     parser.add_argument(
@@ -266,7 +266,7 @@ def main():
         "--gpu",
         type=str,
         help="",
-        default='cuda:1'
+        default='cuda:0'
     ) 
     
     opt = parser.parse_args()       
