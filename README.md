@@ -203,10 +203,12 @@ Our work is standing on the shoulders of giants. We thank the following contribu
 ## Citation
 If you find the repo useful, please consider citing:
 ```
-@InProceedings{lu2023tficon,
+@InProceedings{Lu_2023_ICCV,
     author    = {Lu, Shilin and Liu, Yanzhu and Kong, Adams Wai-Kin},
     title     = {TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
     year      = {2023},
+    pages     = {2294-2305}
 }
 ```
