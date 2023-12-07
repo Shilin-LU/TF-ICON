@@ -24,8 +24,8 @@ DICT_MASK = {
     'y_2': 0,
 }
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device("cpu")
-CONFIG_PATH = "/home/shilin/proj/TF-ICON/configs/stable-diffusion/v2-inference.yaml"
-CKPT_PATH = "/home/shilin/proj/sd2/ckpt/v2-1_512-ema-pruned.ckpt"
+CONFIG_PATH = "./configs/stable-diffusion/v2-inference.yaml"
+CKPT_PATH = "path/to/sd2/ckpt/v2-1_512-ema-pruned.ckpt"
 CONFIG = OmegaConf.load(CONFIG_PATH) 
 
     
@@ -223,7 +223,7 @@ def tficon(init_img, ref_img, seg, prompt, dpm_order, dpm_steps, tau_a, tau_b, d
     save_mask = torch.zeros_like(init_image) 
     save_mask[:, :, center_row_rm - step_height1:center_row_rm + step_height2, center_col_rm - step_width1:center_col_rm + step_width2] = 1
 
-    image = Image.fromarray(((save_image/torch.max(save_image.max(), abs(save_image.min())) + 1) * 127.5)[0].permute(1,2,0).to(dtype=torch.uint8).cpu().numpy())
+    # image = Image.fromarray(((save_image/torch.max(save_image.max(), abs(save_image.min())) + 1) * 127.5)[0].permute(1,2,0).to(dtype=torch.uint8).cpu().numpy())
     precision_scope = autocast if precision == "autocast" else nullcontext
     
     # image composition
@@ -368,34 +368,6 @@ def read_content(file_path: str) -> str:
 
     return content
 
-def predict(dict, reference, scale, seed, step):
-    width,height=dict["image"].size
-    if width<height:
-        factor=width/512.0
-        width=512
-        height=int((height/factor)/8.0)*8
-
-    else:
-        factor=height/512.0
-        height=512
-        width=int((width/factor)/8.0)*8
-    init_image = dict["image"].convert("RGB").resize((width,height))
-    mask = dict["mask"].convert("RGB").resize((width,height))
-    generator = torch.Generator('cuda').manual_seed(seed) if seed != 0 else None
-    
-    # tficon(init_img, ref_img, mask, seg, prompt, dpm_order, dpm_steps, tau_a, tau_b, domain, seed)
-    
-    # output = pipe(
-    #     image=init_image,
-    #     mask_image=mask,
-    #     example_image=reference,
-    #     generator=generator,
-    #     guidance_scale=scale,
-    #     num_inference_steps=step,
-    # ).images[0]
-    output = None
-    return output, gr.update(visible=True), gr.update(visible=True), gr.update(visible=True)
-
 ROI_coordinates = {
     'x_temp': 0,
     'y_temp': 0,
@@ -502,17 +474,20 @@ with image_blocks as demo:
                         seed = gr.Slider(0, 10000, label='Seed (0 = random)', value=3407, step=1)
                     
                     with gr.Row():
-                        tau_a = gr.Slider(label="tau_a", value=0.4, minimum=0.0, maximum=1.0, step=0.1, interactive=True)
-                        tau_b = gr.Slider(label="tau_b", value=0.8, minimum=0.0, maximum=1.0, step=0.1, interactive=True)
+                        tau_a = gr.Slider(label="tau_a", value=0.4, minimum=0.0, maximum=1.0, step=0.1, interactive=True,
+                                          info="Foreground Attention Injection")
+                        tau_b = gr.Slider(label="tau_b", value=0.8, minimum=0.0, maximum=1.0, step=0.1, interactive=True,
+                                          info="Background Preservation")
                         
                     with gr.Row():
                         scale = gr.Slider(label="CFG", value=2.5, minimum=0.0, maximum=15.0, step=0.5, interactive=True,
-                                        info="CFG=2.5 for real domain CFG=5.0 for cross domain")
+                                        info="CFG=2.5 for real domain CFG>=5.0 for cross domain")
                         dpm_order = gr.CheckboxGroup(["1", "2", "3"], value = '2', label="DPM Solver Order") 
                         
-                    domain = gr.Radio(["Cross Domain", "Real Domain"], value='Real Domain', label="Domain")
+                    domain = gr.Radio(["Cross Domain", "Real Domain"], value='Real Domain', label="Domain",
+                                      info="When background is real image, choose Real Domain; otherwise, choose Cross Domain")
                     prompt = gr.Textbox(label="Prompt", 
-                                        info="a professional photograph of a tart and spring rolls, ultra realistic"
+                                        info="an oil painting (or a pencil drawing) of a panda"
                                         ).style(height=400)
                     
                     btn = gr.Button("Run!").style(
