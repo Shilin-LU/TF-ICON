@@ -25,7 +25,7 @@ DICT_MASK = {
 }
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device("cpu")
 CONFIG_PATH = "./configs/stable-diffusion/v2-inference.yaml"
-CKPT_PATH = "path/to/sd2/ckpt/v2-1_512-ema-pruned.ckpt"
+CKPT_PATH = "/path/to/sd2/ckpt/v2-1_512-ema-pruned.ckpt"
 CONFIG = OmegaConf.load(CONFIG_PATH) 
 
     
@@ -181,7 +181,7 @@ def tficon(init_img, ref_img, seg, prompt, dpm_order, dpm_steps, tau_a, tau_b, d
         mask_scale = new_w / 256
         mask_scale = new_h / (aspect_ratio * 256) 
             
-    mask_scale = round(mask_scale, 2)
+    # mask_scale = round(mask_scale, 2)
     
     # =============================================================================================
 
