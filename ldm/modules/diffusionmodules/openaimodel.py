@@ -351,7 +351,7 @@ def count_flops_attn(model, _x, y):
 
 class QKVAttentionLegacy(nn.Module):
     """
-    A module which performs QKV attention. Matches legacy QKVAttention + input/output heads shaping
+    A module which performs QKV attention. Matches legacy QKVAttention + input/ouput heads shaping
     """
 
     def __init__(self, n_heads):
