@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tf-icon"
+version = "0.1.0"
+description = "TF-ICON: Diffusion-Based Training-Free Cross-Domain Image Composition"
+readme = "README.md"
+authors = [
+    {name = "Shilin Lu, Yanzhu Liu, and Adams Wai-Kin Kong", email = "shilin002@e.ntu.edu.sg"}
+]
+license = {file = "LICENSE"}
+requires-python = ">=3.8.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "torch>=1.12.1",
+    "torchvision>=0.13.1",
+    "numpy>=1.23.1",
+    "albumentations>=1.3.0",
+    "opencv-python>=4.6.0.66",
+    "imageio>=2.9.0",
+    "imageio-ffmpeg>=0.4.2",
+    "pytorch-lightning>=1.4.2",
+    "omegaconf>=2.1.1",
+    "test-tube>=0.7.5",
+    "streamlit>=1.12.1",
+    "einops>=0.3.0",
+    "transformers>=4.19.2",
+    "webdataset>=0.2.5",
+    "kornia>=0.6",
+    "open-clip-torch>=2.0.2",
+    "invisible-watermark>=0.1.5",
+    "streamlit-drawable-canvas>=0.8.0",
+    "torchmetrics>=0.6.0",
+    "diffusers>=0.12.1",
+    "tqdm",
+    "matplotlib",
+    "gradio>=3.44.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+    "jupyter",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Shilin-LU/TF-ICON"
+"Bug Tracker" = "https://github.com/Shilin-LU/TF-ICON/issues"
+"Paper" = "https://arxiv.org/abs/2412.00241"
