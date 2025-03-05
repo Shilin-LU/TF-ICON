@@ -170,7 +170,7 @@ More samples are available in [TF-ICON Test Benchmark](#tf\-icon-test-benchmark)
 To execute the TF-ICON under the 'cross_domain' mode, run the following commands:
 
 ```
-python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
+python scripts/main_tf_icon.py  --ckpt ckpt/v2-1_512-ema-pruned.ckpt      \
                                 --root ./inputs/cross_domain      \
                                 --domain 'cross'                  \
                                 --dpm_steps 20                    \
@@ -185,7 +185,7 @@ python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
 
 For the 'same_domain' mode, run the following commands:
 ```
-python scripts/main_tf_icon.py  --ckpt <path/to/model.ckpt/>      \
+python scripts/main_tf_icon.py  --ckpt ckpt/v2-1_512-ema-pruned.ckpt      \
                                 --root ./inputs/same_domain       \
                                 --domain 'same'                   \
                                 --dpm_steps 20                    \

@@ -1,6 +1,12 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]  # Look for packages in the root directory
+include = ["ldm*", "scripts*", "ptp_scripts*", "gradio*"]  # Include only these packages
+exclude = ["tests*", "docs*", "*.tests", "*.tests.*"]  # Exclude these patterns
+namespaces = false  # Don't scan for implicit namespaces (PEP 420)
 
 [project]
 name = "tf-icon"
@@ -38,6 +44,7 @@ dependencies = [
     "invisible-watermark>=0.1.5",
     "streamlit-drawable-canvas>=0.8.0",
     "torchmetrics>=0.6.0",
+	"huggingface-hub==0.25.2",
     "diffusers>=0.12.1",
     "tqdm",
     "matplotlib",
