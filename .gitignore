@@ -1,0 +1,17 @@
+*.egg-info
+
+# Checkpoint files
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.pth.tar
+*.pth.tar.gz
+*.pth.tar.xz
+*.pth.tar.bz2
+
+# Gradio cache
+gradio/cache
+
+# PyTorch Lightning checkpoint
+lightning_logs/
